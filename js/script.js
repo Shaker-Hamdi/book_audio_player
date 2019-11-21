@@ -18442,7 +18442,7 @@ $(document).ready(function() {
                         zIndex: 100
                     });
                     $(".playerWrapper").css("background", "white");
-                    $(".playerComponents").css("padding", "25px 0");
+                    $(".playerComponents").css("padding", "15px 0");
                     $(".chapterContent").css("padding-top", audioPlayerHeight);
                 } else {
                     $(".audioPlayerInlineSticky").css({
