@@ -18438,19 +18438,16 @@ $(document).ready(function() {
                     $(".audioPlayerInlineSticky").css({
                         position: "sticky",
                         top: currentScroll - audioPlayerInlineSticky + 75,
-                        display: "block",
-                        zIndex: 100
+                        zIndex: 100,
+                        float: "none"
                     });
                     $(".playerWrapper").css("background", "white");
-                    $(".playerComponents").css("padding", "15px 0");
-                    $(".chapterContent").css("padding-top", audioPlayerHeight);
                 } else {
                     $(".audioPlayerInlineSticky").css({
                         position: "relative",
-                        top: 0,
-                        display: "flex"
+                        float: "right",
+                        top: 0
                     });
-                    $(".chapterContent").css("padding-top", "0");
                 }
             });
         }
