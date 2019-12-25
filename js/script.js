@@ -18103,230 +18103,6 @@ $(document).ready(function() {
     })();
 
     (function() {
-        if ($(".audioPlayer").length) {
-            const greenColor = "#707805",
-                lightGreen = "#D3D7B0";
-            var wavesurfer = WaveSurfer.create({
-                container: ".visualizer",
-                barWidth: 1,
-                barGap: 1,
-                waveColor: lightGreen,
-                progressColor: greenColor,
-                barHeight: 2.5, // the height of the wave
-                responsive: true,
-                mediaType: "audio",
-                // rtl: false,
-                hideScrollbar: true,
-                cursorWidth: 0,
-                forceDecode: true,
-                partialRender: true,
-                pixelRatio: 1,
-
-                plugins: [WaveSurfer.cursor.create()]
-            });
-
-            var audioSource = $(".audioPlayer")
-                .find(".audioSource")
-                .data("src");
-            wavesurfer.load(audioSource);
-
-            // Fetch audio source
-
-            const playButton = $(".audioPlayer")
-                .find(".togglePlay")
-                .find(".play-btn")
-                .parent()
-                .html();
-            function timeformat(timeget) {
-                if (!timeget) {
-                    return "00:00";
-                }
-
-                var min = Math.floor(timeget / 60);
-                var sec = Math.ceil(timeget) % 60;
-
-                return (
-                    (min < 10 ? "0" : "") +
-                    min +
-                    ":" +
-                    (sec < 10 ? "0" : "") +
-                    sec
-                );
-            }
-
-            // Time Format Function to Mins and Secs
-
-            wavesurfer.on("ready", function() {
-                var total = timeformat(wavesurfer.getDuration()); // get Audio Duration
-
-                $(".audioPlayer")
-                    .find(".totalTime")
-                    .html(total); // render Audio Duration into HTML
-            });
-
-            $(".play-btn").on("click", function() {
-                wavesurfer.play();
-                $(".audioPlayer")
-                    .find(".togglePlay")
-                    .find(".play-btn")
-                    .hide()
-                    .parent()
-                    .find(".pause-btn")
-                    .show();
-            });
-
-            // Play Event
-
-            $(".pause-btn").on("click", function() {
-                wavesurfer.pause();
-                $(".audioPlayer")
-                    .find(".togglePlay")
-                    .find(".pause-btn")
-                    .hide()
-                    .parent()
-                    .find(".play-btn")
-                    .show();
-            });
-
-            // Pause Event
-
-            wavesurfer.on("audioprocess", function() {
-                var timeset = timeformat(wavesurfer.getCurrentTime()); // getCurrent Time
-                if (wavesurfer.isPlaying()) {
-                    $(".audioPlayer")
-                        .find(".elaspedTime")
-                        .html(timeset);
-                }
-            });
-
-            // Remaning Time
-        }
-    })();
-    // Audio Player
-
-    (function() {
-        if ($(".audioPlayerInlineFixed").length) {
-            const greenColor = "#707805",
-                lightGreen = "#D3D7B0";
-            var wavesurfer = WaveSurfer.create({
-                container: ".visualizer",
-                barWidth: 1,
-                barGap: 1,
-                waveColor: lightGreen,
-                progressColor: greenColor,
-                barHeight: 2.5, // the height of the wave
-                responsive: true,
-                mediaType: "audio",
-                // rtl: false,
-                hideScrollbar: true,
-                cursorWidth: 0,
-                forceDecode: true,
-                partialRender: true,
-                pixelRatio: 1,
-
-                plugins: [WaveSurfer.cursor.create()]
-            });
-
-            var audioSource = $(".audioPlayerInlineFixed")
-                .find(".audioSource")
-                .data("src");
-            wavesurfer.load(audioSource);
-
-            // Fetch audio source
-
-            const playButton = $(".audioPlayerInlineFixed")
-                .find(".togglePlay")
-                .find(".play-btn")
-                .parent()
-                .html();
-            function timeformat(timeget) {
-                if (!timeget) {
-                    return "00:00";
-                }
-
-                var min = Math.floor(timeget / 60);
-                var sec = Math.ceil(timeget) % 60;
-
-                return (
-                    (min < 10 ? "0" : "") +
-                    min +
-                    ":" +
-                    (sec < 10 ? "0" : "") +
-                    sec
-                );
-            }
-
-            // Time Format Function to Mins and Secs
-
-            wavesurfer.on("ready", function() {
-                var total = timeformat(wavesurfer.getDuration()); // get Audio Duration
-
-                $(".audioPlayerInlineFixed")
-                    .find(".totalTime")
-                    .html(total); // render Audio Duration into HTML
-            });
-
-            $(".play-btn").on("click", function() {
-                wavesurfer.play();
-                $(".audioPlayerInlineFixed")
-                    .find(".togglePlay")
-                    .find(".play-btn")
-                    .hide()
-                    .parent()
-                    .find(".pause-btn")
-                    .show();
-            });
-
-            // Play Event
-
-            $(".pause-btn").on("click", function() {
-                wavesurfer.pause();
-                $(".audioPlayerInlineFixed")
-                    .find(".togglePlay")
-                    .find(".pause-btn")
-                    .hide()
-                    .parent()
-                    .find(".play-btn")
-                    .show();
-            });
-
-            // Pause Event
-
-            wavesurfer.on("audioprocess", function() {
-                var timeset = timeformat(wavesurfer.getCurrentTime()); // getCurrent Time
-                if (wavesurfer.isPlaying()) {
-                    $(".audioPlayerInlineFixed")
-                        .find(".elaspedTime")
-                        .html(timeset);
-                }
-            });
-
-            // Remaning Time
-
-            var audioPlayerInlineFixed = $(".audioPlayerInlineFixed").offset()
-                .top;
-            var almost = $(".audioPlayerInlineFixed").offset().top - 10;
-
-            $(window).scroll(function() {
-                var currentScroll = $(window).scrollTop();
-
-                if (currentScroll == almost) {
-                    // $(".audioPlayerInlineFixed").hide(500);
-                } else if (currentScroll >= audioPlayerInlineFixed) {
-                    $(".audioPlayerInlineFixed")
-                        // .show()
-                        .addClass("fixed");
-                } else {
-                    $(".audioPlayerInlineFixed")
-                        .removeClass("fixed")
-                        .fadeIn(1000);
-                }
-            });
-        }
-    })();
-    // Audio Player Inline With Smooth Scroll
-
-    (function() {
         if ($(".audioPlayerInlineSticky").length) {
             const greenColor = "#707805",
                 lightGreen = "#D3D7B0";
@@ -18452,7 +18228,7 @@ $(document).ready(function() {
             });
         }
     })();
-    // Audio Player Inline Fixed
+    // Audio Player Inline Sticky
 
     (function() {
         if ($(".audioPlayerInline").length) {
@@ -18557,6 +18333,131 @@ $(document).ready(function() {
     // Audio Player Inline
 
     (function() {
+        if ($(".audioPlayerSmall").length) {
+            const greenColor = "#707805",
+                lightGreen = "#D3D7B0";
+            var wavesurfer = WaveSurfer.create({
+                container: ".visualizer",
+                barWidth: 1,
+                barGap: 1,
+                waveColor: lightGreen,
+                progressColor: greenColor,
+                barHeight: 2.5, // the height of the wave
+                responsive: true,
+                mediaType: "audio",
+                // rtl: false,
+                hideScrollbar: true,
+                cursorWidth: 0,
+                forceDecode: true,
+                partialRender: true,
+                pixelRatio: 1,
+
+                plugins: [WaveSurfer.cursor.create()]
+            });
+
+            var audioSource = $(".audioPlayerSmall")
+                .find(".audioSource")
+                .data("src");
+            wavesurfer.load(audioSource);
+            // Fetch audio source
+
+            const playButton = $(".audioPlayerSmall")
+                .find(".togglePlay")
+                .find(".play-btn")
+                .parent()
+                .html();
+            function timeformat(timeget) {
+                if (!timeget) {
+                    return "00:00";
+                }
+
+                var min = Math.floor(timeget / 60);
+                var sec = Math.ceil(timeget) % 60;
+
+                return (
+                    (min < 10 ? "0" : "") +
+                    min +
+                    ":" +
+                    (sec < 10 ? "0" : "") +
+                    sec
+                );
+            }
+            // Time Format Function to Mins and Secs
+
+            wavesurfer.on("ready", function() {
+                var total = timeformat(wavesurfer.getDuration()); // get Audio Duration
+
+                $(".audioPlayerSmall")
+                    .find(".totalTime")
+                    .html(total); // render Audio Duration into HTML
+            });
+
+            $(".play-btn").on("click", function() {
+                wavesurfer.play();
+                $(".audioPlayerSmall")
+                    .find(".togglePlay")
+                    .find(".play-btn")
+                    .hide()
+                    .parent()
+                    .find(".pause-btn")
+                    .show();
+            });
+            // Play Event
+
+            $(".pause-btn").on("click", function() {
+                wavesurfer.pause();
+                $(".audioPlayerSmall")
+                    .find(".togglePlay")
+                    .find(".pause-btn")
+                    .hide()
+                    .parent()
+                    .find(".play-btn")
+                    .show();
+            });
+            // Pause Event
+
+            wavesurfer.on("audioprocess", function() {
+                var timeset = timeformat(wavesurfer.getCurrentTime()); // getCurrent Time
+                if (wavesurfer.isPlaying()) {
+                    $(".audioPlayerSmall")
+                        .find(".elaspedTime")
+                        .html(timeset);
+                }
+            });
+            // Remaning Time
+
+            $(
+                ".audioOuterWrapper .play-icon, .audioOuterWrapper2 .play-icon, .audioOuterWrapper3 .play-icon, .audioOuterWrapper4 .play-icon"
+            ).on("click", function(e) {
+                e.preventDefault();
+                $(
+                    ".audioOuterWrapper, .audioOuterWrapper2, .audioOuterWrapper3, .audioOuterWrapper4"
+                ).addClass("showPlayer");
+                wavesurfer.play();
+                $(".audioPlayerSmall")
+                    .find(".togglePlay")
+                    .find(".play-btn")
+                    .hide()
+                    .parent()
+                    .find(".pause-btn")
+                    .show();
+
+                wavesurfer.on("ready", function() {
+                    wavesurfer.play();
+                    $(".audioPlayerSmall")
+                        .find(".togglePlay")
+                        .find(".play-btn")
+                        .hide()
+                        .parent()
+                        .find(".pause-btn")
+                        .show();
+                });
+            });
+        }
+    })();
+    // Audio Player Small
+
+    (function() {
         if ($(".table-nav").length) {
             var tableWrapper = $(".table-wrapper");
             var tableWrapperWidth = $(".table-wrapper").width();
@@ -18602,6 +18503,15 @@ $(document).ready(function() {
             });
         }
     })(); // Table Indecator
+
+    (function() {
+        if ($("table").length) {
+            if ($("table").width() > 1170) {
+                $("body,html").css("overscroll-behavior-x", "none");
+            }
+        }
+    })();
+    // Prevent Chrome Mac gesture conflict with horizontal scrolling
 
     // (function() {
     //     if ($("div#signinForm, div#signUpForm, div#forgotPasswordForm, div#recommendForm").length) {
