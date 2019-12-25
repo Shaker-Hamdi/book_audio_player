@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="66" viewBox="0 0 128 66">
+    <g fill="none" fill-rule="evenodd">
+        <g fill="#6C7500" transform="matrix(-1 0 0 1 125.92 0)">
+            <rect width="2.54" height="21.692" x="25.096" y="19.14" rx="1.27"/>
+            <rect width="2.54" height="5.742" x="106.381" y="27.434" rx="1.27"/>
+            <rect width="2.54" height="30.624" x="30.176" y="14.674" rx="1.27"/>
+            <rect width="2.54" height="12.122" x="111.461" y="24.244" rx="1.27"/>
+            <rect width="2.54" height="21.692" x="35.256" y="19.14" rx="1.27"/>
+            <rect width="2.54" height="21.692" x="116.542" y="19.14" rx="1.27"/>
+            <rect width="2.54" height="5.742" x="40.337" y="27.434" rx="1.27"/>
+            <rect width="2.54" height="12.122" x="121.622" y="24.244" rx="1.27"/>
+            <rect width="2.54" height="12.76" x="45.417" y="23.606" rx="1.27"/>
+            <rect width="2.54" height="21.692" x="50.497" y="19.14" rx="1.27"/>
+            <rect width="2.54" height="21.692" x="55.578" y="19.14" rx="1.27"/>
+            <rect width="2.54" height="21.692" x="60.658" y="19.14" rx="1.27"/>
+            <rect width="2.54" height="5.742" x=".024" y="27.434" rx="1.27"/>
+            <rect width="2.54" height="47.212" x="65.738" y="6.38" rx="1.27"/>
+            <rect width="2.54" height="12.122" x="5.104" y="24.244" rx="1.27"/>
+            <rect width="2.54" height="59.971" x="70.819" rx="1.27"/>
+            <rect width="2.54" height="21.692" x="75.899" y="19.14" rx="1.27"/>
+            <rect width="2.54" height="40.832" x="80.979" y="9.57" rx="1.27"/>
+            <rect width="2.54" height="21.692" x="86.06" y="19.14" rx="1.27"/>
+            <rect width="2.54" height="21.692" x="9.855" y="19.14" rx="1.27"/>
+            <rect width="2.54" height="21.692" x="91.14" y="19.14" rx="1.27"/>
+            <rect width="2.54" height="5.742" x="14.935" y="27.434" rx="1.27"/>
+            <rect width="2.54" height="47.212" x="96.22" y="6.38" rx="1.27"/>
+            <rect width="2.54" height="5.742" x="20.016" y="27.434" rx="1.27"/>
+            <rect width="2.54" height="12.122" x="101.301" y="24.244" rx="1.27"/>
+        </g>
+        <path fill="#FFF" d="M.48 30.24h127v35.28H.48z" opacity=".732"/>
+        <path fill="#FFF" d="M.48 29.4h127v2.4H.48z"/>
+        <path fill="#FF7A4F" fill-rule="nonzero" stroke="#FFF" stroke-width="2.4" d="M78.696 29.393L54.769 15.805a1.426 1.426 0 0 0-1.474 0c-.482.274-.695.78-.695 1.328v27.175c0 .547.213 1.053.695 1.327.241.137.468.205.737.205a1.5 1.5 0 0 0 .758-.205l23.916-13.588c.482-.273.774-.78.774-1.327 0-.547-.302-1.053-.784-1.327z"/>
+    </g>
+</svg>
